@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as settingActions from '../../actions/settingActions.js';
 import SettingsMenu from '../SettingsMenu';
-import { Link } from 'react-router';
 
 @connect(state => {
     return {
@@ -42,7 +41,7 @@ export default class Footer extends Component {
                 </div>
 
                 <div className={'Footer__settings'}>
-                    
+
                     { /* TODO: <Link to={'/code'}>
                         <i className={'ion-code'} />
                     </Link> */ }

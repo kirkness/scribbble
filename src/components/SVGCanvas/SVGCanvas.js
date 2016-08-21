@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
 import * as sketchActions from '../../actions/sketchActions.js';
 import SVGPath from './SVGPath.js';
 import SVGCanvasDroplet from './SVGCanvasDroplet.js';
@@ -65,7 +64,7 @@ export default class SVGCanvas extends Component {
 
         if (this.shouldPrevent) {
 
-            browserHistory.push('/');
+            // browserHistory.push('/');
             return false;
         }
 
