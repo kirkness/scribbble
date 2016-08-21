@@ -1,0 +1,82 @@
+
+.SwitchWrapper {
+
+    float: right;
+    display: inline-block;
+
+    > img {
+        width: $switch-height;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    &__imgLeft {
+        margin-right: $u;
+    }
+
+    &__imgRight {
+        margin-left: $u;
+    }
+}
+
+.Switch {
+    display: inline-block;
+    width: $switch-width;
+    height: $switch-height;
+    border: 1px solid $light;
+    border-radius: $switch-height/2;
+    cursor: pointer;
+
+
+
+    &__toggle {
+
+        $t_s: $switch-height - 2;
+
+        margin-bottom: 2px;
+        border-radius: $t_s/2;
+        display: inline-block;
+        width: $t_s;
+        height: $t_s;
+        border: 1px solid $light;
+
+        &.-right {
+            animation: toggleRight .2s linear;
+            animation-fill-mode: forwards;
+        }
+        &.-left {
+            animation: toggleLeft .2s linear;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+
+@keyframes toggleRight {
+
+    10% {
+        box-shadow: 0px 0px 20px 3px $light;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px $light;
+        margin-left: $switch-height;
+    }
+}
+
+@keyframes toggleLeft {
+
+    0% {
+        margin-left: $switch-height;
+    }
+
+    10% {
+        box-shadow: 0px 0px 20px 3px $light;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px $light;
+        margin-left: 0px;
+    }
+}

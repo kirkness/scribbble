@@ -1,0 +1,85 @@
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+%clearfix {
+    @include clearfix;
+}
+
+@mixin expander-expanded($max-height: 400px) {
+	max-height: $max-height;
+}
+@mixin expander-hidden {
+	max-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	overflow: hidden;
+}
+
+@mixin standard-transition($property: all, $transition-time: $transition-t) {
+	transition: $property $transition-time;
+}
+%standard-transition {
+    @include standard-transition;
+}
+
+///////////////////////
+// center element
+// usually works
+
+@mixin center($axis: xy) {
+	position: relative;
+
+	@if $axis == x {
+
+		left: 50%;
+		transform:  translateX(-50%);
+
+	} @else if $axis == y {
+
+		top: 50%;
+		transform: translateY(-50%);
+
+	} @else if $axis == xy {
+
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+}
+%center {
+    @include center(xy);
+}
+%center-y {
+    @include center(y);
+}
+%center-x {
+    @include center(x);
+}
+
+///////////////////////////.
+// Box shadows
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+
+///////////////////////////.
+// Border radius
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}

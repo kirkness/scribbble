@@ -1,0 +1,67 @@
+
+.Footer {
+    @include clearfix;
+    z-index: 1;
+    transform: translateY($footer-height);
+    background-color: white;
+    height: $footer-height;
+    bottom: 0px;
+    border-top: 1px solid $light;
+    margin: 0 $u;
+    position: absolute;
+    width: calc(100% - 24px);
+
+    &.-visible {
+
+        animation: FooterWrapperIn .75s ease;
+        animation-fill-mode: forwards;
+    }
+
+    i {
+        @include standard-transition;
+        color: $light;
+        font-size: 36px;
+        margin-right: $u_l;
+        cursor: pointer;
+
+
+        &.-highlight {
+            color: $red;
+            animation: PulsatingIcon 1.2s infinite;
+        }
+    }
+
+    &__controllers {
+
+        @include span(6);
+    }
+
+    &__settings {
+
+        @include span(6 last);
+        background-color: white;
+        text-align: right;
+    }
+}
+
+@keyframes FooterWrapperIn {
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes PulsatingIcon {
+
+    0% {
+        color: $red;
+    }
+
+    50% {
+        color: darken($red, 15%);
+    }
+
+    100% {
+        color: $red;
+    }
+}

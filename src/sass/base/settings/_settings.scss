@@ -1,0 +1,83 @@
+///////////////
+// base
+
+$font-size: 14px;
+$line-height: 20px;
+
+$transition-t-f: .2s;
+$transition-t: .4s;
+$transition-t-s: .8s;
+
+$z-top: 1000;
+$z-middle: 500;
+$z-bottom: 1;
+
+// Measures
+$base-unit: 12px;
+
+$u-xs: $base-unit/4; //3px
+$u-s: $base-unit/2; //6px
+$u: $base-unit;
+$u-l: $base-unit*2; //24px
+
+
+$border-radius: 6px;
+$border-radius-s: 3px;
+
+
+// Navbar
+
+$navbar-height: 50px;
+
+// Footer
+
+$footer-height: 60px;
+
+// Switch
+
+$switch-height: 30px;
+$switch-width: $switch-height * 2;
+
+/////////////////
+// typography
+
+$ff_header: sans-serif;
+$ff_body: sans-serif;
+$ff_buttons: $ff_header;
+
+$f_xlarge: 21px;
+$f_large: 17px;
+$f_medium: $font-size; //regular
+$f_small: 12px;
+$f_xsmall: 10px;
+
+
+
+
+/////////////////////
+// colors
+
+// clean greys
+// 222, 333, 40404, 555
+
+$grey-darker: #222;
+$grey-dark: #404040;
+$grey: #555;
+$grey-light: #D3D3D3;
+$grey-lighter: #F3F3F3;
+
+$lighter: #EFEFEF;
+$light: #BAD0D9;
+$dark: #3F5765;
+$darker: #2B3A42;
+$red: #FF530D;
+
+/* Changing Susy default global settings */
+$susy: (
+columns: 12,
+container: 1120px,
+global-box-sizing: border-box
+);
+
+/* Makes border-box properties */
+@include border-box-sizing;

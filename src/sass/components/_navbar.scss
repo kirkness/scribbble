@@ -1,0 +1,36 @@
+
+
+
+.Navbar {
+    @include clearfix;
+    background-color: white;
+    height: $navbar-height;
+    border-bottom: 1px solid $light;
+    padding: 0 $u;
+    overflow: hidden;
+
+    &__left, &__right {
+        line-height: $navbar-height;
+    }
+
+    &__left {
+        @include span(6);
+        height: $navbar-height;
+
+        h1 {
+            @include xlarge;
+            font-weight: 400;
+            color: $light;
+            line-height: $navbar-height;
+            margin: 0px;
+        }
+    }
+
+    &__right {
+        @include span(6 last);
+
+        .Switch {
+            margin-top: ($navbar-height - $switch-height) / 2;
+        }
+    }
+}

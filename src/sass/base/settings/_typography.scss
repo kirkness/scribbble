@@ -1,0 +1,21 @@
+// temp settings
+@mixin xsmall {
+    font-size: $f_xsmall;
+    line-height: floor(1.4 * $f_xsmall);
+}
+@mixin small {
+    font-size: $f_small;
+    line-height: floor(1.4 * $f_small);
+}
+@mixin medium {
+    font-size: $f_medium;
+    line-height: floor(1.4 * $f_medium);
+}
+@mixin large {
+    font-size: $f_large;
+    line-height: floor(1.4 * $f_large);
+}
+@mixin xlarge {
+    font-size: $f_xlarge;
+    line-height: floor(1.4 * $f_xlarge);
+}

@@ -1,0 +1,32 @@
+.CodeDisplay {
+    z-index: 1;
+    position: absolute;
+    background-color: $grey-darker;
+    height: 100%;
+    width: 300px;
+    top: 0px;
+    right: 0px;
+
+    &__header {
+
+        i {
+            font-size: 40px;
+            color: $lighter;
+            margin-left: $u_l;
+        }
+    }
+
+    .svgWrapper, .cssWrapper {
+        padding: $u;
+        height: 50%;
+
+        .hljs {
+            word-wrap: break-word;
+            width: 300px;
+        }
+    }
+
+    .cssWrapper {
+        border-top: 1px solid darken($grey-darker, 4%);
+    }
+}

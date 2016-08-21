@@ -1,0 +1,58 @@
+
+$arrow-size: 20px;
+$arrow-right: 20px;
+
+.SettingsMenuWrapper {
+    float: right;
+}
+
+
+.SettingsMenu {
+    @include standard-transition;
+    z-index:-1;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    bottom: $footer-height + $arrow-size;
+    background-color: black;
+    background-color: #fff;
+    right: 0px;
+    border: 1px solid $light;
+    border-radius: 4px;
+    box-shadow: 0px -10px 40px fade-out($darker, .9);
+    transform: scale(0.1) translateY(1350px);
+
+    &.-visible {
+        transform: scale(1) translateY(0px);
+    }
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    &:before {
+        right: $arrow-right;
+        bottom: -$arrow-size * 2;
+        border: $arrow-size solid;
+        border-color: $light transparent transparent transparent;
+    }
+
+    &:after {
+        right: $arrow-right + 2px;
+        bottom: -(($arrow-size * 2) - 4);
+        border: ($arrow-size - 2px) solid;
+        border-color: white transparent transparent transparent;
+    }
+}
+
+.SliderWrapper {
+    padding: $u;
+    border-bottom: 1px solid $grey-lighter;
+
+    label {
+        @include small;
+    }
+}

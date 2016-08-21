@@ -1,0 +1,86 @@
+
+.canvasWrapper {
+    cursor: crosshair !important;
+    height: 100%;
+    background-color: #FFFFFA;
+}
+
+.SVGCanvasDroplet {
+    border-radius: 50%;
+    transform: scale(0);
+    position: absolute;
+    opacity: 1;
+}
+.rippleEffect {
+    animation: rippleDrop .2s linear;
+    background-color: $red;
+
+    &.-infinite {
+        animation: rippleDropSmall .5s linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+.HelperNotice {
+    @include standard-transition(all 1s);
+    position: absolute;width: 100%;
+    text-align: center;
+    top: 300px;
+    color: $light;
+    opacity: 0;
+    transform: translateY(-100px);
+
+    &.-visible {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    &__tip {
+        @include small;
+        position: absolute;
+        width: 100%;
+    }
+
+}
+
+.tipCarousel-enter {
+    opacity: 0.01;
+    transform: translateY(-20px);
+}
+
+.tipCarousel-enter.tipCarousel-enter-active {
+    opacity: 1;
+    transition: all 500ms ease-in;
+    transform: translateY(0px);
+}
+
+.tipCarousel-leave {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.tipCarousel-leave.tipCarousel-leave-active {
+    opacity: 0.01;
+    transition: all 300ms ease-in;
+    transform: translateY(20px);
+}
+
+@keyframes rippleDrop {
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes rippleDropSmall {
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes PathAnimation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
